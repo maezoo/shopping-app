@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-$gray: #C6CACA;
+$gray1: #F5F5F5;
+$gray2: #C6CACA;
 $black: #1F1414;
 $green: #E7FA00;
 $white: #fff;
@@ -15,24 +16,29 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .wrap {
     background-color: $black;
     width: 395px;
-    height: 100vh;
-    max-height: 750px;
+    min-height: 500px;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 40px;
+    overflow: hidden;
+    border: 10px solid black;
 }
 
 .phone {
     display: grid;
-    grid-template-rows: .6fr .8fr repeat(2, 1fr 1fr 1fr .1fr);
-    width: 375px;
+    grid-template-rows: .6fr .8fr 1fr 1fr;
+    width: 100%;
     height: 100%;
+    overflow: hidden;
+
 
     header {
         display: grid;
@@ -44,9 +50,7 @@ body {
         font-size: 16px;
         // border-radius: 50px 50px 0 0;
 
-
         img {
-
             width: 20px;
             height: 20px;
         }
@@ -67,58 +71,70 @@ body {
         }
 
         p:nth-child(2) {
-            font-size: 14px;
+            font-size: 13px;
         }
     }
 
     .detail {
+        background-color: $gray2;
         display: grid;
         grid-template-columns: .8fr .8fr 1fr .1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-row: 3 / 6;
-        background-color: white;
+        grid-template-rows: 1fr 1fr 1fr .1fr;
+        // grid-row: 3 / 6;
+        background-color: olive;
 
         .title {
+
+            display: grid;
             grid-column: 1 / 3;
             grid-row: 1 / 3;
-            background-color: orange;
+
+            // flex-direction: column;
+            // padding: 20px 0 0 15px;
             // justify-content: center;
             // align-items: center;
+            // flex-direction: column;
+            // gap: 8px;
+            font-size: 24px;
+            font-weight: 800;
+        }
 
-            h1 {
-                font-size: 40px;
-            }
-
-            p {
-                font-size: 18px;
-            }
+        .price {
+            display: grid;
+            grid-row: 1 / 2;
+            grid-column: 3 / 4;
+            padding-top: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            justify-content: end;
         }
 
         .info {
-            font-size: 13px;
-            border: 1.5px solid $black;
             background-color: white;
+            font-size: 13px;
             display: grid;
-            grid-row: 3 / 4;
-            // align-items: center;
-            // justify-items: center;
             // grid-template-columns: 1fr 1fr;
-            // grid-column: 1 / 3;
+            grid-column: 1 / 3;
+            grid-row: 3 / 4;
 
-            // padding: 10px;
 
-            p:nth-child(1) {
-                grid-column: 1 / 2;
+            .info p:nth-child(1) {
+                display: grid;
+                // grid-column: 1 / 2;
+                border: 1.5px solid $black;
             }
 
-            p:nth-child(2) {
-                grid-column: 2 / 3;
-            }
+            .info p:nth-child(2) {
+                display: grid;
 
+                // grid-column: 2 / 3;
+                border-top: 1.5px solid $black;
+                border-bottom: 1.5px solid $black;
+            }
         }
 
-
         .image {
+            border: 2px solid black;
             background-color: yellow;
             grid-column: 3 / 4;
             grid-row: 2 / 4;
@@ -126,14 +142,40 @@ body {
             background-size: 350px 350px;
         }
 
-    }
+        // .bottom-right {
+        //     // grid-column: 4/5;
+        //     // grid-row: 3/4;
+        //     border-top: 2px solid black;
+        //     border-bottom: 1.5px solid black;
+        //     background-color: $white;
+        // }
 
-    .empty-gray {
-        background-color: $gray;
+        .empty-gray {
+            background-color: $gray2;
+            grid-row: 4 / 5;
+            grid-column: 1 / 5;
+        }
     }
 
     .detail2 {
-        grid-row: 7 / 10;
-        background-color: sandybrown;
+        background-color: tomato;
+        display: grid;
+        grid-template-columns: .8fr .8fr 1fr .1fr;
+        grid-template-rows: 1fr 1fr 1fr .1fr;
+        grid-row: 4 / 5;
+
+
+        .title {}
+
+        .price {}
+
+        .info {}
+
+        .image {}
+
+        .bottom-right {}
+
+        .empty-gray {}
     }
+
 }
